@@ -71,7 +71,9 @@ def optimize():
 
 rewards_history = []
 
-for episode in range(EPISODES):
+from tqdm import tqdm
+
+for episode in tqdm(range(EPISODES), desc="Training"):
 
     state, _ = env.reset()
     total_reward = 0
@@ -105,9 +107,7 @@ for episode in range(EPISODES):
         best_reward = total_reward
         torch.save(policy_net.state_dict(), MODEL_PATH)
 
-    print(
-        f"Episode {episode + 1}/{EPISODES} | Reward: {total_reward:.0f} | Epsilon: {epsilon:.3f}"
-    )
+    
 
 env.close()
 plot_rewards(rewards_history)

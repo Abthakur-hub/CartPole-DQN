@@ -1,3 +1,4 @@
+from utils.plot import plot_rewards
 import os
 import random
 
@@ -109,3 +110,4 @@ for episode in range(EPISODES):
     )
 
 env.close()
+plot_rewards(rewards_history)

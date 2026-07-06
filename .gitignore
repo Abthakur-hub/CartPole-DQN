@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+
+checkpoints/*.pth
+
+videos/*.gif
+
+reward_plot.png
+
+.DS_Store
